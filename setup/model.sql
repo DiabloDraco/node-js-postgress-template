@@ -39,6 +39,7 @@ create table temporary(
    user_id int references users(user_id),
    temp_score decimal(7,2) not null,
    status varchar(20) default 'pending',
+   chin_key varchar(100) not null,
    created_at timestamp default current_timestamp
 );
 
@@ -55,3 +56,7 @@ insert into users(username,lastname,password,contact,email,country,brithday)
  
  insert into temporary(user_id,temp_score) 
  values (1,200);
+
+
+
+ ALTER TABLE temporary ADD COLUMN chin_key VARCHAR;
