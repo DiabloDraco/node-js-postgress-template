@@ -40,11 +40,8 @@ const PUT_SUCCESSFUL = async ({token},{userId},{tempId}) =>{
        let put_pending_user = await fetch(GET_PUT_SUCCESSFUL,tempId)
        let addScore = Number(put_pending_user.temp_score) 
        oldUserScore = Number(oldUserScore.score)
-       console.log(oldUserScore)
-       console.log(addScore)
        oldUserScore += addScore
        let newUserBalance = await fetch(PUTUSER,oldUserScore,userId)
-       console.log(newUserBalance)
        put_pending_user.score = newUserBalance.score
        return put_pending_user
     }else{
