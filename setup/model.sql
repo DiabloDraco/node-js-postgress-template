@@ -43,6 +43,12 @@ create table temporary(
    created_at timestamp default current_timestamp
 );
 
+drop table if exists codes;
+create table codes(
+   code_id serial primary key,
+   code int not null
+);
+
 
 insert into users(username,lastname,password,contact,email,country,brithday)
  values 
@@ -59,4 +65,5 @@ insert into users(username,lastname,password,contact,email,country,brithday)
 
 
 
- ALTER TABLE temporary ADD COLUMN chin_key VARCHAR;
+ ALTER TABLE temporary ADD COLUMN chin_key text;
+ update table set temporary on chin_key text;

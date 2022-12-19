@@ -6,6 +6,7 @@ router.post('/login',controller.LOGIN)
 router.post('/register',controller.REGISTER)
 router.get('/user',controller.GET)
 router.post('/user/image',controller.upload, controller.POST)
+router.put('/user/pass/put',controller.PUT)
 // router.put('/user/balance',controller.BALANCEPUT)
 
 module.exports = router

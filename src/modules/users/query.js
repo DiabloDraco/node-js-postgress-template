@@ -26,14 +26,17 @@ const GETPOST = `
 update users SET on avatar = $1 where user_id = $2 returning *
 `
 
-const PUTBALANCE = `
+const PUTBALANCE =`
 update balance  SET score = $1 where user_id = $2 returning *
 `
 
 const SETBALANCE = `
 insert into balance(user_id) values($1) returning *
 `
+const PUTPASS = `
+update users SET on password = $2 where email = $1 returning *
+`
 
 module.exports ={
-    GETLOGIN , GETREGISTER ,GETUSER, GETPOST, PUTBALANCE, SETBALANCE
+    GETLOGIN , GETREGISTER ,GETUSER, GETPOST, PUTBALANCE, SETBALANCE,PUTPASS
 }

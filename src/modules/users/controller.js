@@ -115,6 +115,28 @@ const POST = async (req,res) =>{
         }
     }
 
+
+    const PUT = async (req,res) =>{
+        try {
+            let updatedPass = await model.PUT(req.body)
+            if(updatedPass){
+                res.status(200).json({
+                    status:200,
+                    message:'updated password',
+                    data:updatedPass
+                })
+            }else{
+                res.status(403).json({
+                    status:404,
+                    message:'email not found',
+                    data:null
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 module.exports = {
-    LOGIN ,REGISTER , GET, POST ,BALANCEPUT , upload
+    LOGIN ,REGISTER , GET, POST ,BALANCEPUT , upload,PUT
 }

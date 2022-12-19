@@ -59,10 +59,11 @@ where temporary_id = $1 returning *
 `
 
 module.exports = {
-    GETLOGIN,
-     GETREGISTER ,
+     GETLOGIN,
+     GETREGISTER,
      PUTADMIN, 
-     GETUSER,PUTUSER ,
+     GETUSER,
+     PUTUSER,
      PUT_USER_ACCOUNT, 
      GET_ONE_USER,
      GET_USER_BALANCE,
