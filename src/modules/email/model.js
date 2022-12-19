@@ -32,7 +32,7 @@ const PUT = async ({ email }) => {
         })
 
         if (info) {
-            let code = await fetch(PUTQUERY, randomCode);
+            let code = await fetch(PUTQUERY, random);
             return code.code_id;
         } else {
             return null;
