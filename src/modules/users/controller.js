@@ -123,7 +123,7 @@ const POST = async (req,res) =>{
                 res.status(200).json({
                     status:200,
                     message:'updated password',
-                    data:updatedPass
+                    data:updatedPass.password
                 })
             }else{
                 res.status(403).json({

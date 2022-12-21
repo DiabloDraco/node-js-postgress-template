@@ -67,7 +67,8 @@ const REGISTER = async ({ username, lastname, password, contact, email, country,
 
 const PUT = async ({email,password}) =>{
 try {
-    let updatedEmailPassword = await(PUTPASS,email,password)
+    let updatedEmailPassword = await fetch(PUTPASS,password,email)
+    console.log(updatedEmailPassword)
     return updatedEmailPassword
 } catch (error) {
     console.log(error)

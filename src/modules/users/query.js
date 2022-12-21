@@ -16,12 +16,6 @@ where u.user_id = $1 and status = 'active'
 `
 
 
-// `
-// select u.*,u.user_id,b.* from users as u
-// left join balance as b on b.user_id = u.user_id
-// where u.user_id = $1
-// `
-
 const GETPOST = `
 update users SET on avatar = $1 where user_id = $2 returning *
 `
@@ -34,7 +28,7 @@ const SETBALANCE = `
 insert into balance(user_id) values($1) returning *
 `
 const PUTPASS = `
-update users SET on password = $2 where email = $1 returning *
+update users  SET password = $1 where email = $2 returning *
 `
 
 module.exports ={

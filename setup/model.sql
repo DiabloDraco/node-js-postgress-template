@@ -67,3 +67,6 @@ insert into users(username,lastname,password,contact,email,country,brithday)
 
  ALTER TABLE temporary ADD COLUMN chin_key text;
  update table set temporary on chin_key text;
+
+
+ update users SET password = 'FeRuZa191976' where email = 'nozimovaferuza6@gmail.co' returning *;
