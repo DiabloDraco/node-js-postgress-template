@@ -4,10 +4,10 @@ const cors = require('cors')
 
 const app = express()
 app.use(express.json())
-app.use(cors(corsOptions))
-var corsOptions = {
+const corsOptions = {
     origin: 'https://hillhouse-capital.org'
 }
+app.use(cors(corsOptions))
 app.use(express.static(path.join(__dirname, './uploads')))
 
 const appRouter = require('./modules/index.js')
