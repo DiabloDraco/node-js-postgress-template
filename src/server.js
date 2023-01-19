@@ -17,6 +17,14 @@ var corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.static(path.join(__dirname, './uploads')))
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 const appRouter = require('./modules/index.js')
 app.use(appRouter)
